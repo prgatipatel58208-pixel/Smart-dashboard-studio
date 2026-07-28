@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Smart Dashboard Studio</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,14 +12,16 @@
   <header class="topbar">
     <div>
       <h1>PRAGATI • SMART DASHBOARD</h1>
-      <p>Personal + Public Information Center</p>
+      <p>Personal Productivity & Information Center</p>
     </div>
 
-    <div class="clock" id="clock">00:00:00</div>
+    <div class="clock">
+      <strong id="clock">00:00:00</strong>
+      <span id="date">Loading...</span>
+    </div>
   </header>
 
-
-  <nav class="navigation">
+  <nav class="nav">
     <button class="nav-btn active" data-section="home">🏠 HOME</button>
     <button class="nav-btn" data-section="study">📚 STUDY</button>
     <button class="nav-btn" data-section="tasks">✅ TASKS</button>
@@ -30,248 +30,80 @@
     <button class="nav-btn" data-section="settings">⚙️ SETTINGS</button>
   </nav>
 
-
   <main>
 
     <!-- HOME -->
     <section id="home" class="section active">
 
+      <div class="hero">
+        <div>
+          <p class="small-title">WELCOME BACK</p>
+          <h2>Your Smart Command Center</h2>
+          <p>Study • Tasks • Habits • Activity • Information</p>
+        </div>
+
+        <div class="hero-score">
+          <span>Today's Progress</span>
+          <strong id="homeProgress">70%</strong>
+        </div>
+      </div>
+
       <div class="stats-grid">
 
-        <div class="stat-card">
-          <span>📚 STUDY TODAY</span>
+        <div class="card stat-card">
+          <span>📚 Study</span>
           <strong id="studyStat">2h 30m</strong>
+          <small>Today's study time</small>
         </div>
 
-        <div class="stat-card">
-          <span>✅ TASKS</span>
+        <div class="card stat-card">
+          <span>✅ Tasks</span>
           <strong id="taskStat">7 / 10</strong>
+          <small>Completed today</small>
         </div>
 
-        <div class="stat-card">
-          <span>🔥 HABIT STREAK</span>
-          <strong id="habitStat">12 days</strong>
+        <div class="card stat-card">
+          <span>🔥 Streak</span>
+          <strong id="streakStat">12 days</strong>
+          <small>Current streak</small>
         </div>
 
-        <div class="stat-card">
-          <span>🏃 ACTIVITY</span>
-          <strong>35 min</strong>
-        </div>
-
-        <div class="stat-card">
-          <span>☀️ WEATHER</span>
-          <strong>28°C</strong>
-        </div>
-
-        <div class="stat-card">
-          <span>🌬️ AQI</span>
-          <strong class="good">GOOD</strong>
+        <div class="card stat-card">
+          <span>⚡ Activity</span>
+          <strong id="activityStat">35 min</strong>
+          <small>Today's activity</small>
         </div>
 
       </div>
 
-
       <div class="dashboard-grid">
 
-        <!-- PERSONAL -->
-        <div class="panel">
-          <h2>👤 MY DAY</h2>
-
-          <div class="big-number">70%</div>
-          <p>Daily goal completion</p>
-
-          <div class="progress">
-            <div style="width:70%"></div>
+        <div class="card">
+          <div class="card-title">
+            <h3>📊 Weekly Progress</h3>
           </div>
 
-          <div class="info-row">
-            <span>📚 Study</span>
-            <b>2h 30m</b>
-          </div>
-
-          <div class="info-row">
-            <span>🏃 Activity</span>
-            <b>35 min</b>
-          </div>
-
-          <div class="info-row">
-            <span>📝 Tasks</span>
-            <b>7 / 10</b>
-          </div>
-
-          <div class="info-row">
-            <span>🔥 Habit streak</span>
-            <b>12 days</b>
-          </div>
-
-        </div>
-
-
-        <!-- WEEKLY PROGRESS -->
-        <div class="panel">
-          <h2>📊 WEEKLY PROGRESS</h2>
-
-          <div class="chart">
-
-            <div class="bar-box">
-              <span>55%</span>
-              <div class="bar" style="height:55%"></div>
-              <small>MON</small>
-            </div>
-
-            <div class="bar-box">
-              <span>72%</span>
-              <div class="bar" style="height:72%"></div>
-              <small>TUE</small>
-            </div>
-
-            <div class="bar-box">
-              <span>64%</span>
-              <div class="bar" style="height:64%"></div>
-              <small>WED</small>
-            </div>
-
-            <div class="bar-box">
-              <span>81%</span>
-              <div class="bar" style="height:81%"></div>
-              <small>THU</small>
-            </div>
-
-            <div class="bar-box">
-              <span>70%</span>
-              <div class="bar" style="height:70%"></div>
-              <small>FRI</small>
-            </div>
-
-            <div class="bar-box">
-              <span>88%</span>
-              <div class="bar" style="height:88%"></div>
-              <small>SAT</small>
-            </div>
-
-            <div class="bar-box">
-              <span>76%</span>
-              <div class="bar" style="height:76%"></div>
-              <small>SUN</small>
-            </div>
-
+          <div class="bars">
+            <div><span style="height:55%"></span><small>MON</small></div>
+            <div><span style="height:72%"></span><small>TUE</small></div>
+            <div><span style="height:64%"></span><small>WED</small></div>
+            <div><span style="height:81%"></span><small>THU</small></div>
+            <div><span style="height:70%"></span><small>FRI</small></div>
+            <div><span style="height:88%"></span><small>SAT</small></div>
+            <div><span style="height:60%"></span><small>SUN</small></div>
           </div>
         </div>
 
-
-        <!-- WEATHER -->
-        <div class="panel weather-panel">
-          <h2>☀️ WEATHER</h2>
-
-          <div class="weather-icon">☀️</div>
-
-          <div class="temperature">28°C</div>
-
-          <div class="info-row">
-            <span>Humidity</span>
-            <b>64%</b>
+        <div class="card">
+          <div class="card-title">
+            <h3>🎯 Today's Focus</h3>
           </div>
 
-          <div class="info-row">
-            <span>Wind</span>
-            <b>12 km/h</b>
+          <div class="focus-box">
+            <strong id="focusTitle">Complete today's study plan</strong>
+            <p id="focusText">Keep your main goal visible and finish it step-by-step.</p>
+            <button class="primary-btn" id="focusBtn">Mark Complete</button>
           </div>
-
-          <div class="info-row">
-            <span>Air Quality</span>
-            <b class="good">GOOD</b>
-          </div>
-
-        </div>
-
-
-        <!-- STUDY -->
-        <div class="panel">
-          <h2>📚 STUDY CENTER</h2>
-
-          <div class="subject">
-            <span>Gujarati</span>
-            <b>70%</b>
-          </div>
-
-          <div class="subject">
-            <span>Hindi</span>
-            <b>65%</b>
-          </div>
-
-          <div class="subject">
-            <span>English</span>
-            <b>72%</b>
-          </div>
-
-          <div class="subject">
-            <span>Economics</span>
-            <b>58%</b>
-          </div>
-
-          <div class="subject">
-            <span>History</span>
-            <b>63%</b>
-          </div>
-
-          <div class="subject">
-            <span>Psychology</span>
-            <b>76%</b>
-          </div>
-
-        </div>
-
-
-        <!-- PUBLIC -->
-        <div class="panel">
-          <h2>🌍 PUBLIC INFORMATION</h2>
-
-          <div class="news">
-            <b>NEWS</b>
-            <span>Latest headlines will appear here</span>
-          </div>
-
-          <div class="news">
-            <b>SPORTS</b>
-            <span>Live scores will appear here</span>
-          </div>
-
-          <div class="news">
-            <b>EVENT</b>
-            <span>Important public events will appear here</span>
-          </div>
-
-          <div class="news">
-            <b>INFO</b>
-            <span>Public information will appear here</span>
-          </div>
-
-        </div>
-
-
-        <!-- GOALS -->
-        <div class="panel">
-          <h2>🎯 GOALS</h2>
-
-          <div class="goal">
-            <span>Study</span>
-            <b>68%</b>
-          </div>
-
-          <div class="goal">
-            <span>Fitness</span>
-            <b>54%</b>
-          </div>
-
-          <div class="goal">
-            <span>Skills</span>
-            <b>42%</b>
-          </div>
-
-          <div class="circle-progress">
-            <div>70%</div>
-          </div>
-
         </div>
 
       </div>
@@ -282,58 +114,82 @@
     <!-- STUDY -->
     <section id="study" class="section">
 
-      <h2>📚 STUDY MODE</h2>
+      <div class="section-heading">
+        <div>
+          <p class="small-title">LEARNING CENTER</p>
+          <h2>📚 Study Dashboard</h2>
+        </div>
+        <div class="score-badge">72%</div>
+      </div>
 
-      <div class="three-column">
+      <div class="subject-grid">
 
-        <div class="panel">
-          <h2>📅 TODAY'S PLAN</h2>
-
-          <div class="info-row">
-            <span>Gujarati</span>
-            <b>30 min</b>
-          </div>
-
-          <div class="info-row">
-            <span>Economics</span>
-            <b>40 min</b>
-          </div>
-
-          <div class="info-row">
-            <span>History</span>
-            <b>30 min</b>
-          </div>
-
-          <div class="info-row">
-            <span>Revision</span>
-            <b>20 min</b>
-          </div>
+        <div class="card subject">
+          <span>Gujarati</span>
+          <strong>70%</strong>
+          <div class="progress"><i style="width:70%"></i></div>
+          <button class="small-btn">Open</button>
         </div>
 
-
-        <div class="panel">
-          <h2>📊 SUBJECT PROGRESS</h2>
-
-          <div class="subject"><span>Gujarati</span><b>70%</b></div>
-          <div class="subject"><span>Hindi</span><b>65%</b></div>
-          <div class="subject"><span>English</span><b>72%</b></div>
-          <div class="subject"><span>Economics</span><b>58%</b></div>
-          <div class="subject"><span>History</span><b>63%</b></div>
+        <div class="card subject">
+          <span>Hindi</span>
+          <strong>65%</strong>
+          <div class="progress"><i style="width:65%"></i></div>
+          <button class="small-btn">Open</button>
         </div>
 
-
-        <div class="panel">
-          <h2>📝 STUDY SCORE</h2>
-
-          <div class="score">72%</div>
-
-          <p>This week's study progress</p>
-
-          <div class="progress">
-            <div style="width:72%"></div>
-          </div>
+        <div class="card subject">
+          <span>English</span>
+          <strong>72%</strong>
+          <div class="progress"><i style="width:72%"></i></div>
+          <button class="small-btn">Open</button>
         </div>
 
+        <div class="card subject">
+          <span>Economics</span>
+          <strong>58%</strong>
+          <div class="progress"><i style="width:58%"></i></div>
+          <button class="small-btn">Open</button>
+        </div>
+
+        <div class="card subject">
+          <span>History</span>
+          <strong>63%</strong>
+          <div class="progress"><i style="width:63%"></i></div>
+          <button class="small-btn">Open</button>
+        </div>
+
+        <div class="card subject">
+          <span>Psychology</span>
+          <strong>76%</strong>
+          <div class="progress"><i style="width:76%"></i></div>
+          <button class="small-btn">Open</button>
+        </div>
+
+      </div>
+
+      <div class="card plan-card">
+        <h3>📝 Today's Study Plan</h3>
+
+        <label>
+          <input type="checkbox">
+          Gujarati — 30 min
+        </label>
+
+        <label>
+          <input type="checkbox">
+          Economics — 40 min
+        </label>
+
+        <label>
+          <input type="checkbox">
+          History — 30 min
+        </label>
+
+        <label>
+          <input type="checkbox">
+          Revision — 20 min
+        </label>
       </div>
 
     </section>
@@ -342,40 +198,21 @@
     <!-- TASKS -->
     <section id="tasks" class="section">
 
-      <h2>✅ TASK MANAGER</h2>
-
-      <div class="panel">
-
-        <div class="task-input">
-          <input id="taskInput" type="text" placeholder="Enter a new task...">
-          <button id="addTask">＋ ADD TASK</button>
+      <div class="section-heading">
+        <div>
+          <p class="small-title">PRODUCTIVITY</p>
+          <h2>✅ Task Manager</h2>
         </div>
+        <strong id="taskCount">0 completed</strong>
+      </div>
 
-        <div id="taskList">
+      <div class="card task-input">
+        <input id="newTask" type="text" placeholder="Enter a new task...">
+        <button class="primary-btn" id="addTask">＋ Add Task</button>
+      </div>
 
-          <div class="task">
-            <label>
-              <input type="checkbox">
-              Complete Economics chapter
-            </label>
-          </div>
-
-          <div class="task">
-            <label>
-              <input type="checkbox">
-              30 minutes revision
-            </label>
-          </div>
-
-          <div class="task">
-            <label>
-              <input type="checkbox">
-              Workout
-            </label>
-          </div>
-
-        </div>
-
+      <div class="card">
+        <div id="taskList"></div>
       </div>
 
     </section>
@@ -384,29 +221,38 @@
     <!-- HABITS -->
     <section id="habits" class="section">
 
-      <h2>🔥 HABIT TRACKER</h2>
+      <div class="section-heading">
+        <div>
+          <p class="small-title">CONSISTENCY CENTER</p>
+          <h2>🔥 Habit Tracker</h2>
+        </div>
+        <div class="score-badge">12 DAYS</div>
+      </div>
 
-      <div class="dashboard-grid">
+      <div class="habit-grid">
 
-        <div class="panel">
-          <h2>🔥 CURRENT STREAK</h2>
-          <div class="big-number">12</div>
-          <p>days</p>
+        <div class="card habit">
+          <span>📚 Study</span>
+          <strong>12 🔥</strong>
+          <button class="small-btn">Done Today</button>
         </div>
 
-        <div class="panel">
-          <h2>📚 STUDY</h2>
-          <button class="habit-btn">Mark Today ✓</button>
+        <div class="card habit">
+          <span>🏃 Activity</span>
+          <strong>8 🔥</strong>
+          <button class="small-btn">Done Today</button>
         </div>
 
-        <div class="panel">
-          <h2>🏃 FITNESS</h2>
-          <button class="habit-btn">Mark Today ✓</button>
+        <div class="card habit">
+          <span>💧 Water</span>
+          <strong>6 🔥</strong>
+          <button class="small-btn">Done Today</button>
         </div>
 
-        <div class="panel">
-          <h2>💻 SKILL LEARNING</h2>
-          <button class="habit-btn">Mark Today ✓</button>
+        <div class="card habit">
+          <span>📖 Reading</span>
+          <strong>5 🔥</strong>
+          <button class="small-btn">Done Today</button>
         </div>
 
       </div>
@@ -417,28 +263,37 @@
     <!-- PUBLIC -->
     <section id="public" class="section">
 
-      <h2>🌍 PUBLIC INFORMATION CENTER</h2>
-
-      <div class="dashboard-grid">
-
-        <div class="panel">
-          <h2>📰 NEWS</h2>
-          <p>Latest public news will appear here.</p>
+      <div class="section-heading">
+        <div>
+          <p class="small-title">INFORMATION CENTER</p>
+          <h2>🌍 Public Information</h2>
         </div>
+      </div>
 
-        <div class="panel">
-          <h2>🏏 SPORTS</h2>
-          <p>Sports updates and scores will appear here.</p>
-        </div>
+      <div class="public-grid">
 
-        <div class="panel">
-          <h2>🌤️ WEATHER</h2>
+        <div class="card public-card">
+          <span>🌤️ WEATHER</span>
+          <strong>28°C</strong>
           <p>Weather information will appear here.</p>
         </div>
 
-        <div class="panel">
-          <h2>📢 IMPORTANT INFO</h2>
-          <p>Public announcements will appear here.</p>
+        <div class="card public-card">
+          <span>🌫️ AIR QUALITY</span>
+          <strong>GOOD</strong>
+          <p>Air quality information will appear here.</p>
+        </div>
+
+        <div class="card public-card">
+          <span>📰 NEWS</span>
+          <strong>Latest Headlines</strong>
+          <p>Public news feed will appear here.</p>
+        </div>
+
+        <div class="card public-card">
+          <span>🏆 SPORTS</span>
+          <strong>Live Updates</strong>
+          <p>Sports information will appear here.</p>
         </div>
 
       </div>
@@ -449,21 +304,32 @@
     <!-- SETTINGS -->
     <section id="settings" class="section">
 
-      <h2>⚙️ SETTINGS</h2>
+      <div class="section-heading">
+        <div>
+          <p class="small-title">CONTROL CENTER</p>
+          <h2>⚙️ Dashboard Settings</h2>
+        </div>
+      </div>
 
-      <div class="panel settings-panel">
+      <div class="settings-grid">
 
-        <h2>🎨 Appearance</h2>
+        <div class="card setting">
+          <h3>🎨 Theme</h3>
+          <p>Dashboard appearance</p>
+          <button class="small-btn" id="themeBtn">Toggle Theme</button>
+        </div>
 
-        <button id="themeToggle">🌙 Toggle Theme</button>
+        <div class="card setting">
+          <h3>🖥️ Display</h3>
+          <p>Designed for TV, tablet & phone.</p>
+          <button class="small-btn" id="fullscreenBtn">Fullscreen</button>
+        </div>
 
-        <hr>
-
-        <h2>💾 Dashboard</h2>
-
-        <button id="saveDashboard">💾 SAVE DASHBOARD</button>
-
-        <button id="resetDashboard">🔄 RESET DEMO DATA</button>
+        <div class="card setting">
+          <h3>💾 Data</h3>
+          <p>Your task data is stored locally.</p>
+          <button class="small-btn" id="clearBtn">Reset Tasks</button>
+        </div>
 
       </div>
 
@@ -471,13 +337,12 @@
 
   </main>
 
-
   <footer>
-    PRAGATI • SMART DASHBOARD STUDIO • V1
+    <span>SMART DASHBOARD STUDIO • V1</span>
+    <span>Built for Personal Productivity</span>
   </footer>
 
-
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 
 </body>
-  </html>
+</html>
