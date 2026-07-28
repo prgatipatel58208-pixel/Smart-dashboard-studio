@@ -278,7 +278,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   showToast("⚡ Dashboard engine started!");
 
-});  /* =========================================
+updateClock();
+
+showToast("⚡ Dashboard engine started!");
+   /* =========================================
      STUDY SYSTEM
   ========================================= */
 
@@ -1178,7 +1181,8 @@ document.addEventListener("DOMContentLoaded", () => {
   $("addGoalBtn").addEventListener(
     "click",
     addGoal
-  );  /* =========================================
+  ); 
+   /* =========================================
      NOTES SYSTEM
   ========================================= */
 
